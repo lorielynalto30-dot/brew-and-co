@@ -11,7 +11,7 @@ body {
     color: #35221c;
 }
 
-/* HEADER AND NAVIGATION */
+/* HEADER */
 header {
     background: #35221c;
     padding: 18px 7%;
@@ -49,7 +49,7 @@ nav h2 {
     color: #c69b70;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
     min-height: 500px;
     background:
@@ -66,6 +66,12 @@ nav h2 {
 
 .hero-content {
     color: white;
+}
+
+.welcome {
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 15px;
 }
 
 .hero h1 {
@@ -112,7 +118,52 @@ button:hover {
     color: #765c4c;
 }
 
-/* MENU SECTION */
+/* MENU SEARCH AND FILTERS */
+.menu-tools {
+    max-width: 850px;
+    margin: 0 auto 40px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #cbb8a5;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+#search-input:focus {
+    border-color: #8b5e3c;
+}
+
+.category-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-button {
+    background: #eadbca;
+    color: #35221c;
+    border: 1px solid #cbb8a5;
+    padding: 10px 17px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.filter-button.active {
+    background: #6b422d;
+    color: white;
+}
+
+/* MENU CATEGORY */
+.category-section {
+    margin-top: 45px;
+}
+
 .category-title {
     text-align: left;
     margin: 35px 0 20px;
@@ -163,6 +214,15 @@ button:hover {
     font-size: 19px;
 }
 
+.menu-card button {
+    margin-top: 5px;
+}
+
+.no-results {
+    padding: 30px;
+    color: #765c4c;
+}
+
 /* BUTTONS */
 button {
     background: #6b422d;
@@ -180,7 +240,7 @@ button {
 }
 
 #cart-items {
-    max-width: 650px;
+    max-width: 700px;
     margin: 25px auto;
 }
 
@@ -194,6 +254,7 @@ button {
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
+    text-align: left;
 }
 
 .cart-controls {
@@ -208,6 +269,10 @@ button {
 
 .remove-button {
     background: #a33d32;
+}
+
+.total {
+    margin: 20px 0;
 }
 
 .checkout-button {
@@ -272,7 +337,7 @@ button {
     margin-left: 8px;
 }
 
-/* ORDER CONFIRMATION */
+/* CONFIRMATION */
 .confirmation-section {
     background: #e8d8c5;
     padding: 70px 7%;
@@ -284,7 +349,7 @@ button {
     line-height: 1.7;
 }
 
-/* ABOUT SECTION */
+/* ABOUT */
 .about-section {
     line-height: 1.8;
 }
@@ -294,7 +359,7 @@ button {
     margin: auto;
 }
 
-/* CONTACT SECTION */
+/* CONTACT */
 .contact-section {
     background: #eadbca;
     line-height: 2;
@@ -339,5 +404,15 @@ footer {
 
     .cart-item {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .cart-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .category-title {
+        text-align: center;
     }
 }

@@ -23,7 +23,8 @@
 
 <section id="home" class="hero">
     <div class="hero-content">
-        <h1>Good Coffee. Good Mood.</h1>
+        <p class="welcome">WELCOME TO BREW & CO.</p>
+        <h1>Good Coffee.<br>Good Mood.</h1>
         <p>Every cup tells a story. Make yours special with BREW & CO.</p>
         <a href="#menu" class="main-button">Explore Our Menu</a>
     </div>
@@ -31,82 +32,34 @@
 
 <section id="menu" class="section">
     <h2>Our Menu</h2>
-    <p class="section-intro">Discover your new favorite drink and treat.</p>
+    <p class="section-intro">
+        Discover your new favorite drink, dessert, and delicious treat.
+    </p>
 
-    <h3 class="category-title">☕ Coffee</h3>
-    <div class="menu-container">
-        <div class="menu-card">
-            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500" alt="Iced Americano">
-            <h3>Iced Americano</h3>
-            <p>Rich espresso with refreshing cold water.</p>
-            <h4>₱100</h4>
-            <button onclick="addToCart('Iced Americano', 100)">Add to Cart</button>
-        </div>
-
-        <div class="menu-card">
-            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500" alt="Spanish Latte">
-            <h3>Spanish Latte</h3>
-            <p>Espresso mixed with creamy milk and sweetness.</p>
-            <h4>₱130</h4>
-            <button onclick="addToCart('Spanish Latte', 130)">Add to Cart</button>
-        </div>
-
-        <div class="menu-card">
-            <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=500" alt="Caramel Macchiato">
-            <h3>Caramel Macchiato</h3>
-            <p>A smooth coffee drink with caramel flavor.</p>
-            <h4>₱140</h4>
-            <button onclick="addToCart('Caramel Macchiato', 140)">Add to Cart</button>
-        </div>
+    <div class="menu-tools">
+        <input
+            type="text"
+            id="search-input"
+            placeholder="Search for your favorite product..."
+        >
+        <div id="category-filters" class="category-filters"></div>
     </div>
 
-    <h3 class="category-title">🍵 Non-Coffee</h3>
-    <div class="menu-container">
-        <div class="menu-card">
-            <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=500" alt="Matcha Latte">
-            <h3>Matcha Latte</h3>
-            <p>Earthy matcha blended with creamy milk.</p>
-            <h4>₱120</h4>
-            <button onclick="addToCart('Matcha Latte', 120)">Add to Cart</button>
-        </div>
-
-        <div class="menu-card">
-            <img src="https://images.unsplash.com/photo-1542990253-0b8be5b4b4b4?w=500" alt="Chocolate">
-            <h3>Chocolate</h3>
-            <p>A comforting and delicious chocolate drink.</p>
-            <h4>₱110</h4>
-            <button onclick="addToCart('Chocolate', 110)">Add to Cart</button>
-        </div>
-    </div>
-
-    <h3 class="category-title">🥐 Pastries</h3>
-    <div class="menu-container">
-        <div class="menu-card">
-            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500" alt="Croissant">
-            <h3>Croissant</h3>
-            <p>Flaky and buttery pastry, freshly served.</p>
-            <h4>₱80</h4>
-            <button onclick="addToCart('Croissant', 80)">Add to Cart</button>
-        </div>
-
-        <div class="menu-card">
-            <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=500" alt="Chocolate Muffin">
-            <h3>Chocolate Muffin</h3>
-            <p>Soft muffin filled with chocolate goodness.</p>
-            <h4>₱90</h4>
-            <button onclick="addToCart('Chocolate Muffin', 90)">Add to Cart</button>
-        </div>
-    </div>
+    <div id="menu-content"></div>
 </section>
 
 <section id="cart" class="section cart-section">
     <h2>Your Shopping Cart 🛒</h2>
+
     <div id="cart-items">
         <p>Your cart is empty.</p>
     </div>
 
-    <h3>Total: ₱<span id="cart-total">0</span></h3>
-    <button class="checkout-button" onclick="checkout()">Proceed to Order</button>
+    <h3 class="total">Total: ₱<span id="cart-total">0</span></h3>
+
+    <button class="checkout-button" onclick="checkout()">
+        Proceed to Order
+    </button>
 </section>
 
 <section id="order-form" class="section order-section" hidden>
@@ -115,10 +68,20 @@
 
     <form id="customer-form">
         <label for="customer-name">Customer Name</label>
-        <input type="text" id="customer-name" placeholder="Enter your name" required>
+        <input
+            type="text"
+            id="customer-name"
+            placeholder="Enter your name"
+            required
+        >
 
         <label for="contact-number">Contact Number</label>
-        <input type="tel" id="contact-number" placeholder="Enter contact number" required>
+        <input
+            type="tel"
+            id="contact-number"
+            placeholder="Enter contact number"
+            required
+        >
 
         <label for="order-type">Order Type</label>
         <select id="order-type" required>
@@ -136,20 +99,32 @@
             <h3>Total: ₱<span id="form-total">0</span></h3>
         </div>
 
-        <button type="submit" class="checkout-button">Confirm Order</button>
-        <button type="button" class="cancel-button" onclick="cancelOrder()">Cancel</button>
+        <button type="submit" class="checkout-button">
+            Confirm Order
+        </button>
+
+        <button type="button" class="cancel-button" onclick="cancelOrder()">
+            Cancel
+        </button>
     </form>
 </section>
 
 <section id="confirmation" class="section confirmation-section" hidden>
     <h2>Thank You for Your Order! 🎉</h2>
     <p id="confirmation-message"></p>
-    <button onclick="backToMenu()" class="main-button">Back to Menu</button>
+
+    <button onclick="backToMenu()" class="main-button">
+        Back to Menu
+    </button>
 </section>
 
 <section id="about" class="section about-section">
     <h2>About BREW & CO.</h2>
-    <p>BREW & CO. is a coffee shop created for people who love good coffee, relaxing moments, and delicious treats. We serve quality drinks and pastries to make every visit special.</p>
+    <p>
+        BREW & CO. is a coffee shop created for people who love good coffee,
+        relaxing moments, and delicious treats. We serve quality drinks,
+        freshly baked pastries, desserts, and snacks to make every visit special.
+    </p>
 </section>
 
 <section id="contact" class="section contact-section">
